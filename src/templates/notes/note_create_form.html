@@ -1,0 +1,35 @@
+<div class="modal fade" id="noteCreateModal" tabindex="-1" role="dialog" aria-labelledby="noteCreateModal"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalLabel">add a new note</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2 class="display-4" style="margin-bottom: 20px;"> add a new note </h2>
+        <form method="POST" style="padding: 10px">
+        <div class="container-sm">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="form-group">
+              {{ field.errors }}
+              {{ field }}
+              {% if field.help_text %}
+              <p class="help">{{ field.help_text|safe }}</p>
+            </div>
+              {% endif %}
+        </div>
+        {% endfor %}
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

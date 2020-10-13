@@ -1,0 +1,15 @@
+<div class="card" style="padding: 10px; margin: 10px;">
+  <div class="card-body">
+    <h2 class="card-title"><a href="/notes/notes/{{ note.id }}" class="card-link" style="color: black;">{{note.title}}</a></h2>
+    <p class="card-text">{{note.body}}</p>
+  </div>
+</div>
+
+<style scoped>
+div.card-body:hover {
+  background-color: #f2f2f2;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+  }
+</style>

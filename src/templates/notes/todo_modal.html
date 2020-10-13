@@ -1,0 +1,24 @@
+<div class="modal fade" id="todoEditModal" tabindex="-1" role="dialog" aria-labelledby="todoEditModal"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 class="display-4" style="margin-bottom: 20px;"> add a new todo </h2>
+                <form method="POST" style="padding: 10px">
+                    {% csrf_token %}
+                    <div class="container-sm">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

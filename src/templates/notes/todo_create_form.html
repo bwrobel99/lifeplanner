@@ -1,0 +1,50 @@
+<div class="modal fade" id="todoCreateModal" tabindex="-1" role="dialog" aria-labelledby="todoCreateModal"
+    aria-hidden="true">
+    <div class="modal-dialog" id="todo-form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 class="display-4" style="margin-bottom: 20px;"> add a new todo </h2>
+                <form method="POST" style="padding: 10px">
+                    {% csrf_token %}
+                    <div class="container-sm">
+                        <div class="form-group">
+                            <label for="todoBody">what do you want to remember?</label>
+                            {{ form.body }}
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">deadline</label>
+                            {{ form.deadline }}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vuejs-datepicker"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    var TodoForm = new Vue({
+        el: '#todo-form',
+
+        data() {
+            return {
+                type: 'todo',
+                body: '',
+                deadline: new Date()
+            }
+        },
+
+    })
+</script>
